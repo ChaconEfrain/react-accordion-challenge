@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import useMultipleExpansion from "./hooks/useMultipleExpansion";
+import Accordion from "./components/Accordion";
+import { sections } from "./mocks/sections";
+import "./App.css";
 
 function App() {
+  const { allowMultipleExpansion, toggleMultipleExpansion } =
+    useMultipleExpansion();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Accordion
+        sections={sections}
+        allowMultipleExpansion={allowMultipleExpansion}
+      />
+      <button onClick={toggleMultipleExpansion} style={{ cursor: "pointer" }}>
+        Toggle multiple expansion
+      </button>
     </div>
   );
 }
