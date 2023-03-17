@@ -3,7 +3,11 @@ import React from "react";
 const Section = ({ title, content, sectionsMap, handleExpand }) => {
   return (
     <section style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-      <h2 onClick={handleExpand} style={{ cursor: "pointer" }}>
+      <h2
+        title="Expand section"
+        onClick={handleExpand}
+        style={{ cursor: "pointer" }}
+      >
         {title}
       </h2>
       <div style={{ overflow: "hidden" }}>
